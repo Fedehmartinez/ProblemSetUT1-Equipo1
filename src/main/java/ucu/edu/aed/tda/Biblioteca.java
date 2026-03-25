@@ -46,4 +46,15 @@ public class Biblioteca extends TDAListaEnlazada {
         System.out.println("ISBN no encontrado: " + ISBN);
     }
 
+    public void consultarprestados() {
+        Nodo<Libro> cabeza = listalibrosenprestamo.cabeza;
+        Nodo<Libro> actual = cabeza;
+
+        System.out.println("Libros actualmente en préstamo:");
+        while (actual != null) {
+            System.out.println("ISBN: " + actual.getDato().ISBN + ", Título: " + actual.getDato().titulo);
+            actual = actual.getSiguiente();
+        }
+    }
+
 }
