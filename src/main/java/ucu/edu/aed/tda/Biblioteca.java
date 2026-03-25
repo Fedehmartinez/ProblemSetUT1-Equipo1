@@ -64,7 +64,7 @@ public class Biblioteca extends TDAListaEnlazada {
                     libroEncontrado.stock += cantidad;
                     System.out.println("Compra registrada: " + cantidad + " ejemplares de " + libroEncontrado.titulo);
                 } else {
-                    System.out.println("Tipo de transacción no reconocido: " + tipoTransaccion);
+                    System.out.println("Tipo de transacción no reconocido: " + tipoTransaccion + ". Use 'donar' o 'comprar'.");
                 }
                 return;
             }
