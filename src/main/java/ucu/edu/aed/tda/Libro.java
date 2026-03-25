@@ -15,6 +15,13 @@ public class Libro {
         this.stock = stock;
 
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Libro libro = (Libro) obj;
+        return ISBN == libro.ISBN;
+    }
 
     public Libro(String titulo, String autor, int ISBN) {
 

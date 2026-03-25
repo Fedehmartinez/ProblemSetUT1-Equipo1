@@ -24,12 +24,12 @@ public class TDAListaEnlazada<T> implements TDALista<T> {
         Nodo<T> actual = cabeza;
         while (actual != null) {
             if (actual.getDato().equals(elem)) {
-                System.out.println("Elemento encontrado: " + actual.getDato());
+                System.out.println("ISBN encontrado: " + actual.getDato().toString());
                 return;
             }
             actual = actual.getSiguiente();
         }
-        System.out.println("Elemento no encontrado: " + elem);
+        System.out.println("ISBN no encontrado: " + elem);
     }
 
 }
