@@ -1,7 +1,7 @@
 package org.example;
 
 import junit.framework.Test;
-import junit.framework.TestCase;  // Usar este importa para los tests
+import junit.framework.TestCase;  // Usar este importa para los tests. mvn clean install para correr los tests.
 import junit.framework.TestSuite;
 
 /**
