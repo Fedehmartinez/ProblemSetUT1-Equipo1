@@ -28,6 +28,24 @@ public class Cola<T> extends TDAListaEnlazada<T> implements TDACola<T> {
         eliminar(datoFrente);
         return datoFrente;
     }
-    
+    @Override
+    public boolean esVacio() {
+        return cabeza == null;
+    }
+    @Override 
+    public void vaciar() {
+        cabeza = null;
+        ultimo = null;
+    }
+    @Override
+    public int tamaño() {
+        int contador = 0;
+        Nodo<T> actual = cabeza;
+        while (actual != null) {
+            contador++;
+            actual = actual.getSiguiente();
+        }
+        return contador;
+    }
     
 }

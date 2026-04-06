@@ -2,23 +2,23 @@ package ucu.edu.aed.tda;
 
 public class PilaListaEnlazada<T> extends TDAListaEnlazada<T> {
 
-    public void push(Object elem) {
-        Nodo nuevoNodo = new Nodo(elem);
+    public void push(T elem) {
+        Nodo<T> nuevoNodo = new Nodo<>(elem);
         nuevoNodo.setSiguiente(cabeza);
         cabeza = nuevoNodo;
     }
 
-    public Object pop() {
+    public T pop() {
         if (cabeza == null) {
             System.out.println("La pila está vacía.");
             return null;
         }
-        Object dato = cabeza.getDato();
+        T dato = cabeza.getDato();
         cabeza = cabeza.getSiguiente();
         return dato;
     }
 
-    public Object peek() {
+    public T peek() {
         if (cabeza == null) {
             System.out.println("La pila está vacía.");
             return null;
