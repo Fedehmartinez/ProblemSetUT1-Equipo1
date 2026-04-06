@@ -1,10 +1,8 @@
 package org.example;
 
 import junit.framework.Test;
-import junit.framework.TestCase;
+import junit.framework.TestCase;  // Usar este importa para los tests
 import junit.framework.TestSuite;
-
-import java.util.Objects;
 
 /**
  * Unit test for simple App.
