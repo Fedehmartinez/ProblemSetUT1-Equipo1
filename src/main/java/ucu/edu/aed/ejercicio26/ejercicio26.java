@@ -1,7 +1,8 @@
 package ucu.edu.aed.ejercicio26;
 
 import java.util.List;
-import ucu.edu.aed.tda.PilaListaEnlazada;
+
+import ucu.edu.aed.tda.implementaciones.PilaListaEnlazada;
 
 public class ejercicio26 {
 

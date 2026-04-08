@@ -1,4 +1,8 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.tda.implementaciones;
+
+import ucu.edu.aed.ejercicio17.Adquisiciones;
+import ucu.edu.aed.ejercicio17.Biblioteca;
+import ucu.edu.aed.ejercicio17.Prestamos;
 
 public class Main {
     public static void main(String[] args) {

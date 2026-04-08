@@ -1,4 +1,4 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.ejercicio17;
 
 public class Libro {
     String titulo;

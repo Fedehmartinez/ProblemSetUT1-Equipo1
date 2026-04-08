@@ -1,4 +1,7 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.ejercicio17;
+
+import ucu.edu.aed.tda.implementaciones.Nodo;
+import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
 
 public class Biblioteca {
 
@@ -6,7 +9,7 @@ public class Biblioteca {
     TDAListaEnlazada<Libro> listalibrosenprestamo = new TDAListaEnlazada<>();
 
     public void RegistrarPrestamo(String ISBN) {
-        Nodo<Libro> actual = listalibros.cabeza;
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(ISBN)) {
                 if (actual.getDato().stock > 0) {
@@ -26,7 +29,7 @@ public class Biblioteca {
     }
 
     public void RegistrarDevolucion(String ISBN) {
-        Nodo<Libro> actual = listalibros.cabeza;
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(ISBN)) {
                 actual.getDato().stock++;
@@ -41,7 +44,7 @@ public class Biblioteca {
     }
 
     public void consultarprestados() {
-        Nodo<Libro> actual = listalibrosenprestamo.cabeza;
+        Nodo<Libro> actual = listalibrosenprestamo.getCabeza();
         System.out.println("Libros actualmente en préstamo:");
         while (actual != null) {
             System.out.println("ISBN: " + actual.getDato().ISBN + ", Título: " + actual.getDato().titulo);
@@ -51,7 +54,7 @@ public class Biblioteca {
 
     public void registrarTransaccion(String ISBN, int cantidad, String tipoTransaccion) {
         Libro libroBusqueda = new Libro("", ISBN);
-        Nodo<Libro> actual = listalibros.cabeza;
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
@@ -77,7 +80,7 @@ public class Biblioteca {
 
     public Libro retirarLibro(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN);
-        Nodo<Libro> actual = listalibros.cabeza; 
+        Nodo<Libro> actual = listalibros.getCabeza(); 
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
@@ -93,7 +96,7 @@ public class Biblioteca {
 
     public Libro consultarExistenciaLibro(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN, 0, 0.0);
-        Nodo<Libro> actual = listalibros.cabeza; 
+        Nodo<Libro> actual = listalibros.getCabeza(); 
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
@@ -107,7 +110,7 @@ public class Biblioteca {
     }
 
     public String listarLibros() {
-        Nodo<Libro> actual = listalibros.cabeza;
+        Nodo<Libro> actual = listalibros.getCabeza();
         StringBuilder resultado = new StringBuilder("Libros en la biblioteca:\n");
         while (actual != null) {
             resultado.append("ISBN: ").append(actual.getDato().ISBN)
@@ -126,7 +129,7 @@ public class Biblioteca {
 
     public Libro buscarPorCodigo(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN, 0, 0.0);
-        Nodo<Libro> actual = listalibros.cabeza; 
+        Nodo<Libro> actual = listalibros.getCabeza(); 
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();

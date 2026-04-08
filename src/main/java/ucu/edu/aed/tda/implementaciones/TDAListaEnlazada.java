@@ -1,10 +1,16 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.tda.implementaciones;
 
 import java.util.function.Predicate;
+
+import ucu.edu.aed.tda.interfaces.TDALista;
 
 public class TDAListaEnlazada<T> implements TDALista<T> {
     protected Nodo<T> cabeza;
 
+    public Nodo<T> getCabeza() {
+        return cabeza;
+    }
+    
     public TDAListaEnlazada() {
         this.cabeza = null;
     }

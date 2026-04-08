@@ -1,4 +1,4 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.tda.implementaciones;
 
 public class Nodo<T> {
     private T dato;

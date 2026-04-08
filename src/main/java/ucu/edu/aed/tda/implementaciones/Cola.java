@@ -1,4 +1,6 @@
-package ucu.edu.aed.tda;
+package ucu.edu.aed.tda.implementaciones;
+
+import ucu.edu.aed.tda.interfaces.TDACola;
 
 public class Cola<T> extends TDAListaEnlazada<T> implements TDACola<T> {
      protected Nodo<T> ultimo;
