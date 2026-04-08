@@ -1,6 +1,5 @@
 package ucu.edu.aed.tda;
 
-import java.util.Comparator;
 import java.util.function.Predicate;
 
 /**
@@ -116,19 +115,6 @@ public interface TDALista<T> {
      *         si no existe ninguno
      */
     T buscar(Predicate<T> criterio);
-
-    /**
-     * Retorna una nueva lista con los elementos ordenados según el comparador dado.
-     *
-     * <p>
-     * El criterio de orden está determinado por el objeto {@link Comparator}
-     * recibido como parámetro.
-     * </p>
-     *
-     * @param comparator el comparador que define el orden de los elementos
-     * @return una lista ordenada según el criterio indicado
-     */
-    TDALista<T> ordenar(Comparator<T> comparator);
 
     /**
      * Retorna la cantidad de elementos almacenados en la lista.
