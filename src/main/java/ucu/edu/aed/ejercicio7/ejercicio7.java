@@ -1,4 +1,4 @@
-package ejercicios_problem_sets;
+package ucu.edu.aed.ejercicio7;
 
 import java.io.File;
 import java.util.Scanner;
