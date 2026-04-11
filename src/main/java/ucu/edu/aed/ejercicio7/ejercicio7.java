@@ -1,57 +1,48 @@
 package ucu.edu.aed.ejercicio7;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.util.Scanner;
 
 public class ejercicio7 {
     public static void main(String[] args) {
 
-        String archivo = "numeros.txt";
-        int N = 0;
-        int[] a = null;
-
         try {
-            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            Scanner sc = new Scanner(new File("numeros.txt"));
 
-            N = Integer.parseInt(br.readLine());
-            a = new int[N];
+            int N = sc.nextInt();
+            int[] a = new int[N];
 
             for (int i = 0; i < N; i++) {
-                a[i] = Integer.parseInt(br.readLine());
+                a[i] = sc.nextInt();
             }
 
-            br.close();
+            int contadorIf = 0;
+            int intercambios = 0;
 
-        } catch (IOException e) {
-            System.out.println("Error al leer el archivo");
-            return;
-        }
+            for (int i = 1; i <= N - 1; i++) {
+                for (int j = N - 1 ; j >= i; j--) {
 
-        int contadorIf = 0;
-        int intercambios = 0;
+                    contadorIf++;
 
-        for (int i = 1; i <= N - 1; i++) {
-            for (int j = N - 1 ; j >= i; j--) {
-
-                contadorIf++;
-
-                if (a[j] < a[j - 1]) {
-                    int temp = a[j];
-                    a[j] = a[j - 1];
-                    a[j - 1] = temp;
-                    intercambios++;
+                    if (a[j] < a[j - 1]) {
+                        int temp = a[j];
+                        a[j] = a[j - 1];
+                        a[j - 1] = temp;
+                        intercambios++;
+                    }
                 }
             }
-        }
 
-        System.out.println("Valor de N: " + N);
-        System.out.println("Cantidad de veces que se evaluó el if: " + contadorIf);
-        System.out.println("Cantidad de intercambios: " + intercambios);
+            System.out.println("N: " + N);
+            System.out.println("Ifs: " + contadorIf);
+            System.out.println("Intercambios: " + intercambios);
+            System.out.println("Primero: " + a[0]);
+            System.out.println("Ultimo: " + a[N - 1]);
 
-        if (N > 0) {
-            System.out.println("Primer elemento: " + a[0]);
-            System.out.println("Último elemento: " + a[N - 1]);
+            sc.close();
+
+        } catch (Exception e) {
+            System.out.println("Error al leer el archivo");
         }
     }
 }
