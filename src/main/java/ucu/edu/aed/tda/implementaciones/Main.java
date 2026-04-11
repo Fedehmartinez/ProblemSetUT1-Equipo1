@@ -31,24 +31,50 @@ public class Main {
          * biblioteca.listarLibros();
          */
 
-        String sucursalesArchivo = "src/main/resources/sucursales.txt";
-
         /*
-         * gestion.agregarSucursal(suc1.getNombre());
-         * gestion.agregarSucursal(suc2.getNombre());
-         * gestion.agregarSucursal(suc3.getNombre());
+         * ============ EJECICIO 23 ============
+         * Prueba del programa
+         * Dado un archivo de entrada, el programa debe:
+         * 1. Leer el archivo “sucursales.txt”
+         * 2. Mostrar en consola las ciudades cargadas.
+         * 3. Mostrar el total de elementos (ciudades) contenidas en la estructura
          */
-
-        // public void procesarArchivo(String rutaArchivo) {
         GestionSucursales gestion = new GestionSucursales();
 
-        // Leer archivo y agregar sucursales
+        // 1. Leer el archivo “sucursales.txt”.
+
         FileUtils.leerLineas("sucursales.txt", linea -> {
             gestion.agregarSucursal(linea);
         });
 
-        // Listar sucursales
+        // 2. Mostrar en consola las ciudades cargadas.
         gestion.listarSucursales();
+        // 3. Mostrar el total de elementos (ciudades) contenidas en la estructura
+
+        gestion.contarSucursales();
+
+        gestion.eliminarSucursal("Chicago");
+        gestion.listarSucursales();
+
+        // 3. Levantar el archivo suc2.txt y eliminar las ciudades Shenzen y Tokio.
+        GestionSucursales gestion2 = new GestionSucursales();
+        FileUtils.leerLineas("suc2.txt", linea -> {
+            gestion2.agregarSucursal(linea);
+        });
+
+        // gestion2.eliminarSucursal("Shenzen");
+        // gestion2.eliminarSucursal("Tokio");
+
+        System.err.println("Para suc2 ------------------");
+        // gestion2.contarSucursales();
+
+        System.err.println("Para suc3 ------------------");
+        GestionSucursales gestion3 = new GestionSucursales();
+        FileUtils.leerLineas("suc3.txt", linea -> {
+            gestion3.agregarSucursal(linea);
+        });
+        gestion3.listarSucursales();
+
     }
 
 }
