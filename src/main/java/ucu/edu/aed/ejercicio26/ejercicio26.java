@@ -1,7 +1,5 @@
 package ucu.edu.aed.ejercicio26;
 
-import java.util.List;
-
 import ucu.edu.aed.tda.implementaciones.PilaListaEnlazada;
 import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
 
@@ -24,4 +22,3 @@ public class ejercicio26 {
     return pila.esVacia();
     }
 }
-
