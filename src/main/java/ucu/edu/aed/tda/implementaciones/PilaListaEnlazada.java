@@ -1,6 +1,6 @@
 package ucu.edu.aed.tda.implementaciones;
 
-public class PilaListaEnlazada<T> extends TDAListaEnlazada<T> {
+public class PilaListaEnlazada<T> extends ListaEnlazada<T> {
 
     public void push(T elem) {
         Nodo<T> nuevoNodo = new Nodo<>(elem);
@@ -25,8 +25,9 @@ public class PilaListaEnlazada<T> extends TDAListaEnlazada<T> {
         }
         return cabeza.getDato();
     }
+
     public boolean esVacia() {
         return cabeza == null;
     }
-    
+
 }

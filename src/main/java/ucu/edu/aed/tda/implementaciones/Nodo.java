@@ -1,6 +1,7 @@
 package ucu.edu.aed.tda.implementaciones;
 
 public class Nodo<T> {
+
     private T dato;
     private Nodo<T> siguiente;
 
@@ -28,4 +29,5 @@ public class Nodo<T> {
     public void imprimirNodo() {
         System.out.println("Dato: " + this.dato);
     }
+
 }

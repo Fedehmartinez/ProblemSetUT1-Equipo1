@@ -1,12 +1,11 @@
 package ucu.edu.aed.ejercicio17;
 
-import ucu.edu.aed.tda.implementaciones.Nodo;
-import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
+import ucu.edu.aed.tda.implementaciones.*;
 
 public class Biblioteca {
 
-    TDAListaEnlazada<Libro> listalibros = new TDAListaEnlazada<>();
-    TDAListaEnlazada<Libro> listalibrosenprestamo = new TDAListaEnlazada<>();
+    ListaEnlazada<Libro> listalibros = new ListaEnlazada<>();
+    ListaEnlazada<Libro> listalibrosenprestamo = new ListaEnlazada<>();
 
     public void RegistrarPrestamo(String ISBN) {
         Nodo<Libro> actual = listalibros.getCabeza();
@@ -61,15 +60,18 @@ public class Biblioteca {
                 if (tipoTransaccion.equalsIgnoreCase("donar")) {
                     if (libroEncontrado.stock >= cantidad) { // <-- fix
                         libroEncontrado.stock -= cantidad;
-                        System.out.println("Donación registrada: Se donaron " + cantidad + " ejemplares de " + libroEncontrado.titulo);
+                        System.out.println("Donación registrada: Se donaron " + cantidad + " ejemplares de "
+                                + libroEncontrado.titulo);
                     } else {
-                        System.out.println("No hay suficiente stock para la donación de " + cantidad + " ejemplares de " + libroEncontrado.titulo);
+                        System.out.println("No hay suficiente stock para la donación de " + cantidad + " ejemplares de "
+                                + libroEncontrado.titulo);
                     }
                 } else if (tipoTransaccion.equalsIgnoreCase("comprar")) {
                     libroEncontrado.stock += cantidad;
                     System.out.println("Compra registrada: " + cantidad + " ejemplares de " + libroEncontrado.titulo);
                 } else {
-                    System.out.println("Tipo de transacción no reconocido: " + tipoTransaccion + ". Use 'donar' o 'comprar'.");
+                    System.out.println(
+                            "Tipo de transacción no reconocido: " + tipoTransaccion + ". Use 'donar' o 'comprar'.");
                 }
                 return;
             }
@@ -80,7 +82,7 @@ public class Biblioteca {
 
     public Libro retirarLibro(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN);
-        Nodo<Libro> actual = listalibros.getCabeza(); 
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
@@ -96,11 +98,12 @@ public class Biblioteca {
 
     public Libro consultarExistenciaLibro(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN, 0, 0.0);
-        Nodo<Libro> actual = listalibros.getCabeza(); 
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
-                System.out.println("Libro encontrado: " + libroEncontrado.titulo + " con ISBN: " + libroEncontrado.ISBN + " y stock: " + libroEncontrado.stock);
+                System.out.println("Libro encontrado: " + libroEncontrado.titulo + " con ISBN: " + libroEncontrado.ISBN
+                        + " y stock: " + libroEncontrado.stock);
                 return libroEncontrado;
             }
             actual = actual.getSiguiente();
@@ -129,11 +132,12 @@ public class Biblioteca {
 
     public Libro buscarPorCodigo(String ISBN) {
         Libro libroBusqueda = new Libro("", ISBN, 0, 0.0);
-        Nodo<Libro> actual = listalibros.getCabeza(); 
+        Nodo<Libro> actual = listalibros.getCabeza();
         while (actual != null) {
             if (actual.getDato().equals(libroBusqueda)) {
                 Libro libroEncontrado = actual.getDato();
-                System.out.println("Libro encontrado: " + libroEncontrado.titulo + " con ISBN: " + libroEncontrado.ISBN);
+                System.out
+                        .println("Libro encontrado: " + libroEncontrado.titulo + " con ISBN: " + libroEncontrado.ISBN);
                 return libroEncontrado;
             }
             actual = actual.getSiguiente();

@@ -1,39 +1,42 @@
 package ucu.edu.aed.ejercicio23;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import ucu.edu.aed.tda.implementaciones.*;
 
-import ucu.edu.aed.tda.implementaciones.Nodo;
-import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
+public class GestionSucursales extends ListaEnlazada<Sucursal> {
 
-public class GestionSucursales {
-    TDAListaEnlazada<Sucursal> listaSucursales = new TDAListaEnlazada<Sucursal>();
+    ListaEnlazada<Sucursal> listaSucursales = new ListaEnlazada<>();
 
-    /*
-     * public GestionSucursales() {
-     * listaSucursales = new TDAListaEnlazada<Sucursal>();
-     * }
-     */
+    public GestionSucursales() {
+        super();
+    }
 
-    public void agregarSucursal(String nombre) {
-        Sucursal nuevaSucursal = new Sucursal(nombre);
-        listaSucursales.agregar(nuevaSucursal);
+    public void agregarSucursal(String dato) {
+        Nodo<Sucursal> nodo = new Nodo<>(new Sucursal(dato));
+        Sucursal sucursal = nodo.getDato();
+        listaSucursales.agregar(sucursal);
     }
 
     public void eliminarSucursal(String nombre) {
-        Sucursal nuevaSucursal = new Sucursal(nombre);
-        listaSucursales.eliminar(nuevaSucursal);
+        Nodo<Sucursal> actual = listaSucursales.getCabeza();
+        while (actual != null) {
+            if (actual.getDato().getNombre().equals(nombre)) {
+                listaSucursales.remover(actual.getDato());
+                System.out.println("Se eliminó la sucursal " + nombre);
+                return;
+            }
+            actual = actual.getSiguiente();
+        }
 
+        System.out.println("No se encontró la sucursal " + nombre);
     }
 
-    public TDAListaEnlazada<Sucursal> listarSucursales() {
+    public ListaEnlazada<Sucursal> listarSucursales() {
         Nodo<Sucursal> actual = listaSucursales.getCabeza();
         System.out.println("Sucursales:");
 
         while (actual != null) {
 
-            System.out.println("- " + actual.getDato().getNombre());
+            System.out.println("- " + actual.getDato());
             actual = actual.getSiguiente();
 
         }
@@ -41,11 +44,11 @@ public class GestionSucursales {
 
     }
 
-    public boolean buscarSucursal(String nombre) {
+    public boolean buscarSucursal(Sucursal nombre) {
         Nodo<Sucursal> actual = listaSucursales.getCabeza();
 
         while (actual != null) {
-            if (actual.getDato().getNombre().equals(nombre)) {
+            if (actual.getDato().equals(nombre)) {
                 System.out.println("Se encontro la sucursal " + nombre);
                 return true;
 

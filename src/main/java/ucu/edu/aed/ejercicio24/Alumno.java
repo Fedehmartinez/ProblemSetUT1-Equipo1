@@ -1,7 +1,5 @@
 package ucu.edu.aed.ejercicio24;
 
-import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
-
 public class Alumno<T> implements Comparable<Alumno<T>> {
     String nombre;
     String apellido;
@@ -59,7 +57,7 @@ public class Alumno<T> implements Comparable<Alumno<T>> {
 
     @Override
     public int compareTo(Alumno<T> o) {
-        // TODO Auto-generated method stub
+
         throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
     }
 

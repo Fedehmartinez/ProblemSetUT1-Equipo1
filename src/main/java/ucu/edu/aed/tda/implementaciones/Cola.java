@@ -2,8 +2,8 @@ package ucu.edu.aed.tda.implementaciones;
 
 import ucu.edu.aed.tda.interfaces.TDACola;
 
-public class Cola<T> extends TDAListaEnlazada<T> implements TDACola<T> {
-     protected Nodo<T> ultimo;
+public class Cola<T> extends ListaEnlazada<T> implements TDACola<T> {
+    protected Nodo<T> ultimo;
 
     @Override
     public T frente() {
@@ -30,15 +30,18 @@ public class Cola<T> extends TDAListaEnlazada<T> implements TDACola<T> {
         eliminar(datoFrente);
         return datoFrente;
     }
+
     @Override
     public boolean esVacio() {
         return cabeza == null;
     }
-    @Override 
+
+    @Override
     public void vaciar() {
         cabeza = null;
         ultimo = null;
     }
+
     @Override
     public int tamaño() {
         int contador = 0;
@@ -49,5 +52,5 @@ public class Cola<T> extends TDAListaEnlazada<T> implements TDACola<T> {
         }
         return contador;
     }
-    
+
 }

@@ -1,8 +1,5 @@
 package ucu.edu.aed.ejercicio23;
 
-import ucu.edu.aed.tda.implementaciones.Nodo;
-import ucu.edu.aed.tda.implementaciones.TDAListaEnlazada;
-
 public class Sucursal {
     String nombre;
 
