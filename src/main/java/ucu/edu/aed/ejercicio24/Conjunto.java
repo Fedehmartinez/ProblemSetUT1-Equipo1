@@ -1,6 +1,6 @@
 package ucu.edu.aed.ejercicio24;
 
-import ucu.edu.aed.tda.implementaciones.*;
+import ucu.edu.aed.tda.implementaciones.ListaEnlazada;
 import ucu.edu.aed.tda.interfaces.TDAConjunto;
 
 public class Conjunto<T> extends ListaEnlazada<T> implements TDAConjunto<T> {
@@ -58,15 +58,12 @@ public class Conjunto<T> extends ListaEnlazada<T> implements TDAConjunto<T> {
     }
 
     @Override
-    public ListaEnlazada<T> listarElementos(TDAConjunto<T> conjunto) {
-        if (conjunto == null) {
-            throw new IllegalArgumentException("Conjunto no puede ser null");
-        }
+    public ListaEnlazada<T> listarElementos() {
 
         ListaEnlazada<T> lista = new ListaEnlazada<>();
 
-        for (int i = 0; i < conjunto.tamaño(); i++) {
-            T elemento = conjunto.obtener(i);
+        for (int i = 0; i < this.tamaño(); i++) {
+            T elemento = this.obtener(i);
             lista.agregar(elemento);
             System.out.println("- " + elemento);
 

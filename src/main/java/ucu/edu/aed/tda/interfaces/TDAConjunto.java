@@ -61,5 +61,5 @@ public interface TDAConjunto<T> extends TDALista<T> {
      */
     boolean esSubconjuntoDe(TDAConjunto<T> otro);
 
-    ListaEnlazada<T> listarElementos(TDAConjunto<T> conjunto);
+    ListaEnlazada<T> listarElementos();
 }

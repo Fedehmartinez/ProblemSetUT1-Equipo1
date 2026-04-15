@@ -1,19 +1,13 @@
 package ucu.edu.aed.tda.implementaciones;
 
-import ucu.edu.aed.ejercicio23.Sucursal;
+import ucu.edu.aed.ejercicio17.Adquisiciones;
+import ucu.edu.aed.ejercicio17.Biblioteca;
+import ucu.edu.aed.ejercicio17.Prestamos;
+import ucu.edu.aed.ejercicio23.GestionSucursales;
 import ucu.edu.aed.ejercicio24.Alumno;
 import ucu.edu.aed.ejercicio24.Conjunto;
 import ucu.edu.aed.tda.interfaces.TDAConjunto;
 import ucu.edu.aed.utils.FileUtils;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.List;
-
-import ucu.edu.aed.ejercicio17.*;
-
-import ucu.edu.aed.ejercicio23.GestionSucursales;
 
 public class Main {
     public static void main(String[] args) {
@@ -92,10 +86,10 @@ public class Main {
         conjunto2.agregar(alumno3);
 
         System.out.println("====== Interseccion ========");
-        conjunto1.interseccion(conjunto2).listarElementos(conjunto2);
+        conjunto1.interseccion(conjunto2).listarElementos();
 
         System.out.println("====== Union ========");
-        conjunto1.union(conjunto2).listarElementos(conjunto1);
+        conjunto1.union(conjunto2).listarElementos();
 
     }
 
