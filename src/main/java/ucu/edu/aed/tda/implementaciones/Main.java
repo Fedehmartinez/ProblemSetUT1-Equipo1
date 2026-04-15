@@ -3,7 +3,6 @@ package ucu.edu.aed.tda.implementaciones;
 import ucu.edu.aed.ejercicio23.Sucursal;
 import ucu.edu.aed.ejercicio24.Alumno;
 import ucu.edu.aed.ejercicio24.Conjunto;
-import ucu.edu.aed.ejercicio24.Curso;
 import ucu.edu.aed.tda.interfaces.TDAConjunto;
 import ucu.edu.aed.utils.FileUtils;
 
