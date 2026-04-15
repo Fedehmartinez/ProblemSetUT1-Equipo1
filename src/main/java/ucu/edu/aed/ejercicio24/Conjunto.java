@@ -9,48 +9,6 @@ public class Conjunto<T> extends ListaEnlazada<T> implements TDAConjunto<T> {
         super();
     }
 
-    public ListaEnlazada<T> union(ListaEnlazada<T> l1, ListaEnlazada<T> l2) {
-
-        if (l1 == null || l2 == null) {
-            throw new IllegalArgumentException("Listas no pueden ser null");
-        }
-
-        ListaEnlazada<T> l3 = new ListaEnlazada<>();
-        l3 = l1;
-
-        for (int i = 0; i < l3.tamaño(); i++) {
-            T elemento = l3.obtener(i);
-
-            if (l3.contiene(elemento) == true) {
-                continue;
-            } else {
-                l3.agregar(elemento);
-            }
-        }
-
-        return l3;
-    }
-
-    public <T> ListaEnlazada<T> interseccion(ListaEnlazada<T> l1, ListaEnlazada<T> l2) {
-
-        if (l1 == null || l2 == null) {
-            throw new IllegalArgumentException("Listas no pueden ser null");
-        }
-
-        ListaEnlazada<T> l3 = new ListaEnlazada<>();
-
-        for (int i = 0; i < l1.tamaño(); i++) {
-
-            T elemento = l1.obtener(i);
-            if (l2.contiene(elemento) && !l3.contiene(elemento)) {
-                l3.agregar(elemento);
-            }
-
-        }
-
-        return l3;
-    }
-
     @Override
     public TDAConjunto<T> union(TDAConjunto<T> otro) {
         TDAConjunto<T> resultado = new Conjunto<>();
@@ -110,6 +68,8 @@ public class Conjunto<T> extends ListaEnlazada<T> implements TDAConjunto<T> {
         for (int i = 0; i < conjunto.tamaño(); i++) {
             T elemento = conjunto.obtener(i);
             lista.agregar(elemento);
+            System.out.println("- " + elemento);
+
         }
 
         return lista;

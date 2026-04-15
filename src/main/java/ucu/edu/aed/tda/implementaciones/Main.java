@@ -85,24 +85,18 @@ public class Main {
         Alumno<String> alumno2 = new Alumno<>("Maria", 654321, "Gomez");
         Alumno<String> alumno3 = new Alumno<>("Emilia", 123456, "Torres");
 
-        ListaEnlazada<Alumno<String>> listaAlumnos = new ListaEnlazada<>();
-        listaAlumnos.agregar(alumno1);
-        listaAlumnos.agregar(alumno2);
-        listaAlumnos.agregar(alumno3);
-
         TDAConjunto<Alumno<String>> conjunto1 = new Conjunto<>();
         conjunto1.agregar(alumno1);
+        conjunto1.agregar(alumno2);
+        conjunto1.agregar(alumno3);
         TDAConjunto<Alumno<String>> conjunto2 = new Conjunto<>();
-        conjunto2.agregar(alumno2);
-
-        System.out.println("====== CURSO PRogramacion========");
-
-        System.out.println("====== CURSO Estructuras ========");
+        conjunto2.agregar(alumno3);
 
         System.out.println("====== Interseccion ========");
         conjunto1.interseccion(conjunto2).listarElementos(conjunto2);
 
         System.out.println("====== Union ========");
+        conjunto1.union(conjunto2).listarElementos(conjunto1);
 
     }
 
